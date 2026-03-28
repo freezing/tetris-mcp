@@ -64,7 +64,7 @@ impl PieceType {
 }
 
 /// The 4 cells occupied by a tetromino, as (x, y) coordinates.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PieceCells([(i32, i32); 4]);
 
 impl PieceCells {

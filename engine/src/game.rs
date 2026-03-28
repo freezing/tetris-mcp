@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use crate::board::Board;
-use crate::history::{Action, GameHistory, GameMetadata, MoveRecord};
+use crate::history::{Action, GameHistory, GameMetadata, MoveEffect, MoveRecord};
 use crate::piece::{Direction, Piece, PieceType, RotateDirection};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -42,7 +42,7 @@ pub struct Game {
     state: GameState,
     rng: StdRng,
     bag: Vec<PieceType>,
-    initial_state: Option<GameState>,
+    initial_state: GameState,
     move_log: Vec<MoveRecord>,
 }
 
@@ -71,7 +71,7 @@ impl Game {
             seed,
             width,
             height,
-            initial_state: Some(state.clone()),
+            initial_state: state.clone(),
             state,
             rng,
             bag,
@@ -94,78 +94,20 @@ impl Game {
 
         let candidate = self.state.current_piece.moved(direction);
 
-        let result = if self.state.board.is_valid_position(&candidate) {
+        if self.state.board.is_valid_position(&candidate) {
             self.state.current_piece = candidate;
+            self.log(Action::Move(direction), MoveEffect::PieceMoved { piece: candidate });
             MoveResult::Moved
         } else if direction == Direction::Down {
-            self.lock_and_spawn()
+            let (result, effect) = self.lock_and_spawn();
+            self.log(Action::Move(direction), effect);
+            result
         } else {
             MoveResult::Invalid
-        };
-
-        self.record(Action::Move(direction), result);
-        result
+        }
     }
 
     pub fn rotate(&mut self, dir: RotateDirection) -> MoveResult {
-        let result = self.try_rotate(dir);
-        self.record(Action::Rotate(dir), result);
-        result
-    }
-
-    pub fn hard_drop(&mut self) -> MoveResult {
-        if self.state.game_over {
-            return MoveResult::GameOver;
-        }
-
-        let mut drop_distance = 0;
-        loop {
-            let candidate = self.state.current_piece.moved(Direction::Down);
-            if self.state.board.is_valid_position(&candidate) {
-                self.state.current_piece = candidate;
-                drop_distance += 1;
-            } else {
-                break;
-            }
-        }
-
-        self.state.score += drop_distance * 2;
-        let result = self.lock_and_spawn();
-        self.record(Action::HardDrop, result);
-        result
-    }
-
-    /// Returns the full game history for serialization/replay.
-    pub fn history(&self) -> GameHistory {
-        GameHistory {
-            metadata: GameMetadata {
-                game_id: self.game_id,
-                seed: self.seed,
-                board_width: self.width,
-                board_height: self.height,
-                final_score: self.state.score,
-                lines_cleared: self.state.lines_cleared,
-                pieces_placed: self.state.pieces_placed,
-                total_moves: self.move_log.len() as u32,
-                game_over: self.state.game_over,
-            },
-            initial_state: self.initial_state.clone().expect("initial state should exist"),
-            moves: self.move_log.clone(),
-        }
-    }
-
-    fn record(&mut self, action: Action, result: MoveResult) {
-        if result == MoveResult::Invalid {
-            return;
-        }
-        self.move_log.push(MoveRecord {
-            move_index: self.move_log.len() as u32,
-            action,
-            state_after: self.state.clone(),
-        });
-    }
-
-    fn try_rotate(&mut self, dir: RotateDirection) -> MoveResult {
         if self.state.game_over {
             return MoveResult::GameOver;
         }
@@ -181,6 +123,7 @@ impl Game {
             };
             if self.state.board.is_valid_position(&candidate) {
                 self.state.current_piece = candidate;
+                self.log(Action::Rotate(dir), MoveEffect::PieceMoved { piece: candidate });
                 return MoveResult::Moved;
             }
         }
@@ -188,7 +131,58 @@ impl Game {
         MoveResult::Invalid
     }
 
-    fn lock_and_spawn(&mut self) -> MoveResult {
+    pub fn hard_drop(&mut self) -> MoveResult {
+        if self.state.game_over {
+            return MoveResult::GameOver;
+        }
+
+        let mut drop_distance: u64 = 0;
+        loop {
+            let candidate = self.state.current_piece.moved(Direction::Down);
+            if self.state.board.is_valid_position(&candidate) {
+                self.state.current_piece = candidate;
+                drop_distance += 1;
+            } else {
+                break;
+            }
+        }
+
+        self.state.score += drop_distance * 2;
+        let (result, effect) = self.lock_and_spawn();
+        self.log(Action::HardDrop, effect);
+        result
+    }
+
+    pub fn history(&self) -> GameHistory {
+        GameHistory {
+            metadata: GameMetadata {
+                game_id: self.game_id,
+                seed: self.seed,
+                board_width: self.width,
+                board_height: self.height,
+                final_score: self.state.score,
+                lines_cleared: self.state.lines_cleared,
+                pieces_placed: self.state.pieces_placed,
+                total_moves: self.move_log.len() as u32,
+                game_over: self.state.game_over,
+            },
+            initial_state: self.initial_state.clone(),
+            moves: self.move_log.clone(),
+        }
+    }
+
+    fn log(&mut self, action: Action, effect: MoveEffect) {
+        self.move_log.push(MoveRecord {
+            move_index: self.move_log.len() as u32,
+            action,
+            effect,
+        });
+    }
+
+    fn lock_and_spawn(&mut self) -> (MoveResult, MoveEffect) {
+        let locked_cells: Vec<(i32, i32)> = self.state.current_piece.cells().iter().copied().collect();
+        let locked_type = self.state.current_piece.piece_type;
+
         self.state.board.lock_piece(&self.state.current_piece);
         self.state.pieces_placed += 1;
 
@@ -204,11 +198,24 @@ impl Game {
         if !self.state.board.is_valid_position(&new_piece) {
             self.state.game_over = true;
             self.state.game_over_reason = Some(GameOverReason::BlockOut);
-            return MoveResult::GameOver;
+            let effect = MoveEffect::GameOver {
+                locked_cells,
+                locked_type,
+                final_score: self.state.score,
+            };
+            return (MoveResult::GameOver, effect);
         }
 
         self.state.current_piece = new_piece;
-        MoveResult::Locked { lines_cleared: lines }
+        let effect = MoveEffect::PieceLocked {
+            locked_cells,
+            locked_type,
+            lines_cleared: lines,
+            score: self.state.score,
+            new_piece,
+            next_piece: next_type,
+        };
+        (MoveResult::Locked { lines_cleared: lines }, effect)
     }
 
     fn line_score(lines: u32, level: u32) -> u64 {
@@ -343,9 +350,8 @@ mod tests {
         for _ in 0..20 {
             game.move_piece(Direction::Left);
         }
-        // This one should be invalid and not recorded
         let before = game.history().moves.len();
-        game.move_piece(Direction::Left);
+        game.move_piece(Direction::Left); // invalid
         assert_eq!(game.history().moves.len(), before);
     }
 }

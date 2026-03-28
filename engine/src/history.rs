@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use crate::game::GameState;
-use crate::piece::{Direction, RotateDirection};
+use crate::piece::{Direction, Piece, PieceType, RotateDirection};
 
 /// A single action taken during a game.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -12,15 +12,37 @@ pub enum Action {
     HardDrop,
 }
 
-/// A record of one move in a game: the action taken and the resulting state.
+/// The effect of an action — compact delta instead of full board state.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum MoveEffect {
+    /// Piece moved or rotated without locking.
+    PieceMoved { piece: Piece },
+    /// Piece locked into the board, lines optionally cleared, new piece spawned.
+    PieceLocked {
+        locked_cells: Vec<(i32, i32)>,
+        locked_type: PieceType,
+        lines_cleared: u32,
+        score: u64,
+        new_piece: Piece,
+        next_piece: PieceType,
+    },
+    /// Game ended.
+    GameOver {
+        locked_cells: Vec<(i32, i32)>,
+        locked_type: PieceType,
+        final_score: u64,
+    },
+}
+
+/// A record of one move: the action and its compact effect.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MoveRecord {
     pub move_index: u32,
     pub action: Action,
-    pub state_after: GameState,
+    pub effect: MoveEffect,
 }
 
-/// Summary metadata for a completed game.
+/// Summary metadata for a game.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GameMetadata {
     pub game_id: Uuid,
@@ -35,6 +57,8 @@ pub struct GameMetadata {
 }
 
 /// Full recorded history of a game.
+/// The viewer reconstructs any frame by starting from `initial_state`
+/// and replaying `MoveEffect` deltas.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GameHistory {
     pub metadata: GameMetadata,
@@ -73,6 +97,38 @@ mod tests {
     }
 
     #[test]
+    fn move_records_are_compact() {
+        let mut game = Game::new(10, 20, 42);
+        game.move_piece(Direction::Left);
+
+        let history = game.history();
+        match &history.moves[0].effect {
+            MoveEffect::PieceMoved { piece } => {
+                // Should just store the piece position, not the whole board
+                assert!(piece.x >= 0);
+            }
+            other => panic!("Expected PieceMoved, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn hard_drop_records_lock_effect() {
+        let mut game = Game::new(10, 20, 42);
+        game.hard_drop();
+
+        let history = game.history();
+        let last = history.moves.last().unwrap();
+        match &last.effect {
+            MoveEffect::PieceLocked { locked_cells, lines_cleared, .. } => {
+                assert_eq!(locked_cells.len(), 4);
+                assert!(*lines_cleared <= 4);
+            }
+            MoveEffect::GameOver { .. } => {} // also valid
+            other => panic!("Expected PieceLocked or GameOver, got {other:?}"),
+        }
+    }
+
+    #[test]
     fn history_roundtrips_through_json() {
         let mut game = Game::new(10, 20, 42);
         game.move_piece(Direction::Down);
@@ -85,6 +141,25 @@ mod tests {
         assert_eq!(restored.metadata.seed, 42);
         assert_eq!(restored.moves.len(), 2);
         assert_eq!(restored.metadata.game_id, history.metadata.game_id);
+    }
+
+    #[test]
+    fn history_json_is_compact() {
+        let mut game = Game::new(10, 20, 42);
+        // Play a few moves
+        for _ in 0..5 {
+            game.move_piece(Direction::Down);
+        }
+        game.hard_drop();
+
+        let history = game.history();
+        let json = history.to_json();
+
+        // A move-only record should be small — no full board dump
+        // With 6 moves and an initial state, JSON should be reasonable
+        // Initial state includes full board grid (~4KB for 10x20).
+        // Move deltas should be small. 6 moves should add < 2KB.
+        assert!(json.len() < 8000, "JSON too large: {} bytes", json.len());
     }
 
     #[test]

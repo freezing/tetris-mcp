@@ -1,17 +1,73 @@
+use serde::de::Deserializer;
+use serde::ser::{SerializeStruct, Serializer};
 use serde::{Deserialize, Serialize};
 
 use crate::piece::PieceType;
+
+/// A sparse cell entry: (x, y, piece_type).
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct SparseCell {
+    x: usize,
+    y: usize,
+    piece: PieceType,
+}
 
 /// A 2D grid of cells, each optionally containing a piece type.
 ///
 /// This is a pure data structure — it handles storage, bounds checking,
 /// and row-level operations. It has no knowledge of game rules, pieces,
-/// or movement. Game logic lives in `Board` (piece locking, line clearing) and `Game` (turns, scoring).
-#[derive(Debug, Clone, Serialize, Deserialize)]
+/// or movement. Game logic lives in `Board` (piece locking, line clearing)
+/// and `Game` (turns, scoring).
+///
+/// Serializes sparsely: only non-empty cells are stored in JSON.
+#[derive(Debug, Clone)]
 pub struct Grid {
     width: usize,
     height: usize,
     cells: Vec<Option<PieceType>>,
+}
+
+impl Serialize for Grid {
+    fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        let occupied: Vec<SparseCell> = self
+            .cells
+            .iter()
+            .enumerate()
+            .filter_map(|(i, cell)| {
+                cell.map(|piece| SparseCell {
+                    x: i % self.width,
+                    y: i / self.width,
+                    piece,
+                })
+            })
+            .collect();
+
+        let mut state = serializer.serialize_struct("Grid", 3)?;
+        state.serialize_field("width", &self.width)?;
+        state.serialize_field("height", &self.height)?;
+        state.serialize_field("cells", &occupied)?;
+        state.end()
+    }
+}
+
+impl<'de> Deserialize<'de> for Grid {
+    fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        #[derive(Deserialize)]
+        struct GridData {
+            width: usize,
+            height: usize,
+            cells: Vec<SparseCell>,
+        }
+
+        let data = GridData::deserialize(deserializer)?;
+        let mut grid = Grid::new(data.width, data.height);
+        for cell in data.cells {
+            if grid.in_bounds(cell.x as i32, cell.y as i32) {
+                grid.set(cell.x, cell.y, Some(cell.piece));
+            }
+        }
+        Ok(grid)
+    }
 }
 
 impl Grid {
@@ -62,13 +118,6 @@ impl Grid {
             let val = self.get(x, from_y);
             self.set(x, to_y, val);
         }
-    }
-
-    /// Returns a 2D vec representation for serialization/display.
-    pub fn to_2d(&self) -> Vec<Vec<Option<PieceType>>> {
-        (0..self.height)
-            .map(|y| (0..self.width).map(|x| self.get(x, y)).collect())
-            .collect()
     }
 }
 
@@ -128,10 +177,34 @@ mod tests {
     }
 
     #[test]
-    fn to_2d_shape() {
-        let grid = Grid::new(6, 12);
-        let rows = grid.to_2d();
-        assert_eq!(rows.len(), 12);
-        assert_eq!(rows[0].len(), 6);
+    fn empty_grid_serializes_sparse() {
+        let grid = Grid::new(10, 20);
+        let json = serde_json::to_string(&grid).unwrap();
+        // Empty grid should have no cell entries
+        assert!(json.contains("\"cells\":[]"), "Expected empty cells array, got: {json}");
+    }
+
+    #[test]
+    fn sparse_roundtrip() {
+        let mut grid = Grid::new(10, 20);
+        grid.set(3, 5, Some(PieceType::T));
+        grid.set(7, 19, Some(PieceType::I));
+
+        let json = serde_json::to_string(&grid).unwrap();
+        let restored: Grid = serde_json::from_str(&json).unwrap();
+
+        assert_eq!(restored.width(), 10);
+        assert_eq!(restored.height(), 20);
+        assert_eq!(restored.get(3, 5), Some(PieceType::T));
+        assert_eq!(restored.get(7, 19), Some(PieceType::I));
+        assert_eq!(restored.get(0, 0), None);
+    }
+
+    #[test]
+    fn sparse_json_is_small() {
+        let grid = Grid::new(10, 20);
+        let json = serde_json::to_string(&grid).unwrap();
+        // Empty 10x20 grid should be tiny — just width, height, empty array
+        assert!(json.len() < 50, "Empty grid JSON too large: {} bytes", json.len());
     }
 }
