@@ -234,8 +234,12 @@ Pieces arrive in shuffled bags of all 7 — you'll see each piece once per bag.
     }
 }
 
+const FLUSH_EVERY_N_MOVES: u32 = 10;
+
 fn format_move_result(result: MoveResult, game: &Game, server: &TetrisServer) -> String {
     if result == MoveResult::GameOver {
+        server.save_game(game);
+    } else if game.history().metadata.total_moves % FLUSH_EVERY_N_MOVES == 0 {
         server.save_game(game);
     }
     let state = game.state();
