@@ -1,0 +1,3 @@
+[workspace]
+members = ["engine", "mcp-server"]
+resolver = "2"
