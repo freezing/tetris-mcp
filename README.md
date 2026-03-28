@@ -93,7 +93,7 @@ Hard drops animate the piece falling rather than teleporting.
 tetris-mcp/
 ├── engine/          # Tetris game engine (library crate)
 ├── engine-wasm/     # WASM wrapper for the viewer
-├── mcp-server/      # MCP server binary (WIP)
+├── mcp-server/      # MCP server binary
 ├── viewer/          # HTML/JS replay viewer
 │   ├── index.html   # Viewer app
 │   ├── pkg/         # WASM build output (generated)
@@ -101,12 +101,78 @@ tetris-mcp/
 └── games/           # Recorded game history (gitignored)
 ```
 
+## Playing with Claude
+
+### Install the MCP server
+
+```bash
+cargo install --path mcp-server
+```
+
+This installs `tetris-mcp-server` to `~/.cargo/bin/`.
+
+### Add to Claude Code
+
+Add to your project's `.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "tetris": {
+      "command": "tetris-mcp-server",
+      "args": ["--strategy", "baseline"]
+    }
+  }
+}
+```
+
+Then start a new Claude Code session. Claude will have access to Tetris tools. Tell it to play:
+
+> Call get_instructions to learn the rules, then play a game of Tetris.
+
+### CLI options
+
+```
+tetris-mcp-server [OPTIONS]
+
+Options:
+  --width <WIDTH>          Board width [default: 10]
+  --height <HEIGHT>        Board height [default: 20]
+  --seed <SEED>            RNG seed (random if not set)
+  --games-dir <DIR>        Where to save game history [default: games]
+  --strategy <LABEL>       Strategy label for comparing runs [default: default]
+```
+
+### Testing with MCP Inspector
+
+You can test the server interactively without Claude using the official MCP inspector:
+
+```bash
+npx @modelcontextprotocol/inspector tetris-mcp-server -- --seed 42
+```
+
+This opens a web UI where you can browse tools, call them manually, and see the responses.
+
+### Comparing strategies
+
+Run multiple games with different prompts and compare:
+
+```bash
+# Game 1: baseline
+tetris-mcp-server --strategy "baseline"
+
+# Game 2: with coaching
+tetris-mcp-server --strategy "think-step-by-step"
+```
+
+Games are saved to `games/` as JSON files. Load them in the viewer to replay and compare.
+
 ## Status
 
 - Engine: done
 - WASM viewer: done
-- MCP server: not started
-- Claude integration: not started
+- MCP server: done
+- Claude integration: ready
 
 ---
 
