@@ -63,27 +63,36 @@ cargo test -p engine
 cargo run --example sample_game > viewer/examples/sample_game.json
 ```
 
-### Build the viewer
+## Viewer
+
+The web viewer replays recorded games with animated hard drops, step-by-step controls, and scrubbing.
+
+### Build
 
 ```bash
 wasm-pack build engine-wasm --target web --out-dir ../viewer/pkg
 ```
 
-### Launch the viewer
+### Run
 
 ```bash
 cd viewer
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080` and drag a game JSON file onto the page.
+Open `http://localhost:8080` and drag a game JSON file onto the page. Game files are saved to `games/` after each MCP session.
 
-**Viewer controls:**
-- **Play/Pause** — spacebar or Play button
-- **Step forward/back** — arrow keys or Prev/Next buttons
-- **Jump to start/end** — Home/End keys
-- **Scrub** — drag the progress slider
-- **Speed** — dropdown (0.5x to 10x)
+### Controls
+
+| Key | Action |
+|-----|--------|
+| Space | Play / Pause |
+| Right arrow | Step forward |
+| Left arrow | Step back |
+| Home | Jump to start |
+| End | Jump to end |
+| Drag slider | Scrub timeline |
+| Speed dropdown | 0.5x to 10x |
 
 Hard drops animate the piece falling rather than teleporting.
 
@@ -120,7 +129,7 @@ Add to your project's `.claude/settings.json`:
   "mcpServers": {
     "tetris": {
       "command": "tetris-mcp-server",
-      "args": ["--strategy", "baseline"]
+      "args": []
     }
   }
 }
@@ -140,7 +149,6 @@ Options:
   --height <HEIGHT>        Board height [default: 20]
   --seed <SEED>            RNG seed (random if not set)
   --games-dir <DIR>        Where to save game history [default: games]
-  --strategy <LABEL>       Strategy label for comparing runs [default: default]
 ```
 
 ### Testing with MCP Inspector
@@ -152,18 +160,6 @@ npx @modelcontextprotocol/inspector tetris-mcp-server -- --seed 42
 ```
 
 This opens a web UI where you can browse tools, call them manually, and see the responses.
-
-### Comparing strategies
-
-Run multiple games with different prompts and compare:
-
-```bash
-# Game 1: baseline
-tetris-mcp-server --strategy "baseline"
-
-# Game 2: with coaching
-tetris-mcp-server --strategy "think-step-by-step"
-```
 
 Games are saved to `games/` as JSON files. Load them in the viewer to replay and compare.
 
