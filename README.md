@@ -40,23 +40,73 @@ I thought it would be interesting to get an LLM to play a game where it's unlike
 
 **MCP Server** — Rust binary that wraps the engine and exposes it as MCP tools over stdio. Claude calls tools to play.
 
-**Game History** — Every game saved as a JSON file with full move-by-move state, Claude's reasoning, and metadata (score, strategy label). Supports comparing runs across different prompts/skills.
+**Game History** — Every game saved as a JSON file with delta-encoded moves (not full board snapshots). The grid uses sparse serialization — only occupied cells are stored. A typical 50-move game is ~20KB.
 
-**Web Viewer** — HTML/JS replay viewer for watching games back. Continuous playback for content creation, step-by-step for debugging Claude's decisions.
+**Web Viewer** — HTML/JS replay viewer powered by the engine compiled to WASM. Loads game history files and replays them with animated hard drops, step-by-step controls, and scrubbing.
+
+## Quick Start
+
+### Prerequisites
+
+- [Rust](https://rustup.rs/) (stable)
+- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) (for the viewer)
+
+### Run the tests
+
+```bash
+cargo test -p engine
+```
+
+### Generate a sample game
+
+```bash
+cargo run --example sample_game > viewer/examples/sample_game.json
+```
+
+### Build the viewer
+
+```bash
+wasm-pack build engine-wasm --target web --out-dir ../viewer/pkg
+```
+
+### Launch the viewer
+
+```bash
+cd viewer
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080` and drag a game JSON file onto the page.
+
+**Viewer controls:**
+- **Play/Pause** — spacebar or Play button
+- **Step forward/back** — arrow keys or Prev/Next buttons
+- **Jump to start/end** — Home/End keys
+- **Scrub** — drag the progress slider
+- **Speed** — dropdown (0.5x to 10x)
+
+Hard drops animate the piece falling rather than teleporting.
 
 ## Project Structure
 
 ```
 tetris-mcp/
 ├── engine/          # Tetris game engine (library crate)
-├── mcp-server/      # MCP server binary
+├── engine-wasm/     # WASM wrapper for the viewer
+├── mcp-server/      # MCP server binary (WIP)
 ├── viewer/          # HTML/JS replay viewer
-└── games/           # Recorded game history (JSON)
+│   ├── index.html   # Viewer app
+│   ├── pkg/         # WASM build output (generated)
+│   └── examples/    # Sample game files
+└── games/           # Recorded game history (gitignored)
 ```
 
 ## Status
 
-Work in progress. The engine is functional. MCP server and viewer coming next.
+- Engine: done
+- WASM viewer: done
+- MCP server: not started
+- Claude integration: not started
 
 ---
 
