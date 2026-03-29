@@ -65,6 +65,20 @@
       --L: #f97316;
     }
 
+    .reasoning-panel {
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .reasoning-panel h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 8px; }
+    .reasoning-text {
+      font-size: 13px; line-height: 1.5; color: #cbd5e1;
+      max-height: 120px; overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .reasoning-text.empty { color: #475569; font-style: italic; }
+
     .metadata { font-size: 12px; color: #64748b; margin-top: 8px; }
   </style>
 </head>
@@ -127,7 +141,15 @@
         </div>
       </div>
 
-      <div class="metadata" id="metadata"></div>
+      <div class="reasoning-panel">
+        <h3>Claude's Reasoning</h3>
+        <div class="reasoning-text" id="reasoning"></div>
+      </div>
+
+      <div style="display: flex; gap: 8px; align-items: center; margin-top: 12px;">
+        <div class="metadata" id="metadata" style="flex: 1;"></div>
+        <button id="btn-load" class="controls" style="background: #334155; border: 1px solid #475569; color: #e2e8f0; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; white-space: nowrap;">Load file</button>
+      </div>
     </div>
   </div>
 
@@ -161,6 +183,7 @@
     const linesEl = document.getElementById('lines');
     const statusEl = document.getElementById('status');
     const metadataEl = document.getElementById('metadata');
+    const reasoningEl = document.getElementById('reasoning');
     const speedSelect = document.getElementById('speed');
 
     // File loading
@@ -261,6 +284,16 @@
       moveCounter.textContent = `${replay.current_move()} / ${replay.total_moves()}`;
       scrubber.value = replay.current_move();
       statusEl.textContent = replay.is_game_over() ? 'Game Over' : `Move ${replay.current_move()}`;
+
+      // Reasoning
+      const reasoning = replay.current_reasoning();
+      if (reasoning) {
+        reasoningEl.textContent = reasoning;
+        reasoningEl.classList.remove('empty');
+      } else {
+        reasoningEl.textContent = 'No reasoning recorded for this move.';
+        reasoningEl.classList.add('empty');
+      }
 
       // Next piece
       renderNextPiece(piece);
@@ -446,6 +479,12 @@
 
     speedSelect.addEventListener('change', () => {
       if (playing) { stopPlay(); startPlay(); }
+    });
+
+    // Load new file
+    document.getElementById('btn-load').addEventListener('click', () => {
+      stopPlay();
+      fileInput.click();
     });
 
     // Keyboard shortcuts

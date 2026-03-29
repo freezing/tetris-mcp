@@ -40,6 +40,8 @@ pub struct MoveRecord {
     pub move_index: u32,
     pub action: Action,
     pub effect: MoveEffect,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub reasoning: Option<String>,
 }
 
 /// Summary metadata for a game.

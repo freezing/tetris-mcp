@@ -133,6 +133,18 @@ impl TetrisReplay {
         serde_json::to_string(&self.history.metadata).unwrap_or_default()
     }
 
+    /// Get the reasoning for the most recent hard drop at or before the current move.
+    /// Returns empty string if no reasoning is available.
+    pub fn current_reasoning(&self) -> String {
+        for i in (0..self.current_move).rev() {
+            let record = &self.history.moves[i];
+            if matches!(record.action, engine::Action::HardDrop) {
+                return record.reasoning.clone().unwrap_or_default();
+            }
+        }
+        String::new()
+    }
+
     /// Peek at the next action type without executing it.
     /// Returns "Move", "Rotate", "HardDrop", or "" if at end.
     pub fn next_action_type(&self) -> String {

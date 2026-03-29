@@ -171,11 +171,19 @@ impl Game {
         }
     }
 
+    /// Attach reasoning to the most recent move record (typically a hard drop).
+    pub fn annotate_last_move(&mut self, reasoning: String) {
+        if let Some(last) = self.move_log.last_mut() {
+            last.reasoning = Some(reasoning);
+        }
+    }
+
     fn log(&mut self, action: Action, effect: MoveEffect) {
         self.move_log.push(MoveRecord {
             move_index: self.move_log.len() as u32,
             action,
             effect,
+            reasoning: None,
         });
     }
 

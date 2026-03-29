@@ -55,6 +55,12 @@ struct RotateRequest {
 }
 
 #[derive(Deserialize, schemars::JsonSchema)]
+struct HardDropRequest {
+    /// Why you chose this placement — your reasoning about the board state, piece choice, and strategy. Stored in the game history for replay analysis.
+    reasoning: Option<String>,
+}
+
+#[derive(Deserialize, schemars::JsonSchema)]
 struct NewGameRequest {
     /// Optional tag label for tagging this game (e.g. "baseline", "aggressive")
     tag: Option<String>,
@@ -86,7 +92,7 @@ Pieces arrive in shuffled bags of all 7 — you'll see each piece once per bag.
 3. **get_next_piece** — Returns the type of the upcoming piece.
 4. **move_piece** — Move the active piece. Pass direction: "left", "right", or "down". Moving down into an obstacle locks the piece.
 5. **rotate** — Rotate the active piece. Pass direction: "cw" (clockwise) or "ccw" (counter-clockwise). Uses wall kicks if near edges.
-6. **hard_drop** — Instantly drop the piece to the bottom and lock it. Scores 2 points per row dropped.
+6. **hard_drop** — Instantly drop the piece to the bottom and lock it. Scores 2 points per row dropped. Pass `reasoning` to explain your placement strategy — it's saved in the game history for replay.
 7. **get_score** — Returns current score, lines cleared, and level.
 
 ## Suggested Play Loop
@@ -197,10 +203,16 @@ Pieces arrive in shuffled bags of all 7 — you'll see each piece once per bag.
         )]))
     }
 
-    #[tool(description = "Instantly drop the piece to the bottom and lock it. Scores 2 points per row dropped. The next piece spawns immediately.")]
-    fn hard_drop(&self) -> Result<CallToolResult, McpError> {
+    #[tool(description = "Instantly drop the piece to the bottom and lock it. Scores 2 points per row dropped. The next piece spawns immediately. Pass 'reasoning' to record why you chose this placement.")]
+    fn hard_drop(
+        &self,
+        Parameters(req): Parameters<HardDropRequest>,
+    ) -> Result<CallToolResult, McpError> {
         let mut game = self.game.lock().unwrap();
         let result = game.hard_drop();
+        if let Some(reasoning) = req.reasoning {
+            game.annotate_last_move(reasoning);
+        }
         Ok(CallToolResult::success(vec![Content::text(
             format_move_result(result, &game, self),
         )]))
