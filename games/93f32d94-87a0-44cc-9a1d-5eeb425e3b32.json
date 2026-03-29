@@ -1,0 +1,1717 @@
+{
+  "metadata": {
+    "game_id": "93f32d94-87a0-44cc-9a1d-5eeb425e3b32",
+    "seed": 8408784640102965908,
+    "board_width": 10,
+    "board_height": 20,
+    "final_score": 496,
+    "lines_cleared": 0,
+    "pieces_placed": 24,
+    "total_moves": 74,
+    "game_over": true
+  },
+  "initial_state": {
+    "board": {
+      "grid": {
+        "width": 10,
+        "height": 20,
+        "cells": []
+      }
+    },
+    "current_piece": {
+      "piece_type": "O",
+      "rotation": "North",
+      "x": 3,
+      "y": 0
+    },
+    "next_piece": "I",
+    "score": 0,
+    "lines_cleared": 0,
+    "level": 1,
+    "pieces_placed": 0,
+    "game_over": false,
+    "game_over_reason": null
+  },
+  "moves": [
+    {
+      "move_index": 0,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 1,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 2,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 3,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              18
+            ],
+            [
+              1,
+              18
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              1,
+              19
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 36,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      },
+      "reasoning": "O at left wall cols 0-1. Creates 2-high block. I next will extend the base flat at row 19 adjacent to O."
+    },
+    {
+      "move_index": 4,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 5,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              19
+            ],
+            [
+              3,
+              19
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              5,
+              19
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 72,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      },
+      "reasoning": "I flat at cols 2-5 on row 19. Row 19 now: OOIIII.... — 6/10. Flat base from cols 0-5, all at row 19 level (O extends to row 18 at cols 0-1)."
+    },
+    {
+      "move_index": 6,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 7,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 8,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 9,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              18
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              7,
+              19
+            ],
+            [
+              8,
+              19
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 108,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      },
+      "reasoning": "L at cols 6-8 on row 19. Row 19: OOIIIILLL. — 9/10, only col 9 open. Hook at (8,18). Building toward col-9 Tetris setup."
+    },
+    {
+      "move_index": 10,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 11,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 12,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              5,
+              17
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              7,
+              18
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 142,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      },
+      "reasoning": "Z at cols 5-7. Lands rows 17-18. Row 18 gets cols 6,7 filled. Crucially leaves cols 2-5 as a consecutive 4-cell gap on row 18 — perfect for a future horizontal I piece to complete the row."
+    },
+    {
+      "move_index": 13,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 14,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 15,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 16,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              17
+            ],
+            [
+              1,
+              17
+            ],
+            [
+              2,
+              17
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 174,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      },
+      "reasoning": "J at left wall cols 0-2, row 17. Fills left of row 17. Preserves cols 2-5 on row 18 for future I piece. S next can fill right side of row 17."
+    },
+    {
+      "move_index": 17,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 18,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 19,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 20,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 21,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              16
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              8,
+              17
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 206,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      },
+      "reasoning": "S at cols 7-9, fills cols 7,8 on row 17. Row 17 now 7/10 (cols 3,4,9). Cols 2-5 on row 18 still clear for future I piece."
+    },
+    {
+      "move_index": 22,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              4,
+              15
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              5,
+              16
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 236,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      },
+      "reasoning": "T at cols 3-5 lands on row 16 (col 5 blocked by Z at row 17). Building row 16 above the gap. Cols 2-5 on row 18 still preserved for I piece."
+    },
+    {
+      "move_index": 23,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 24,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 25,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              3,
+              15
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 264,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      },
+      "reasoning": "Z left cols 1-3, building left side of row 15-16 area."
+    },
+    {
+      "move_index": 26,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 27,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 28,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 29,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              14
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 292,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      },
+      "reasoning": "L right cols 6-8."
+    },
+    {
+      "move_index": 30,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 31,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 32,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 33,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              12
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              0,
+              13
+            ],
+            [
+              1,
+              13
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 316,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      },
+      "reasoning": "O left wall."
+    },
+    {
+      "move_index": 34,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              6,
+              14
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 342,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      },
+      "reasoning": "I horizontal cols 3-6 on row 14. Row 18 cols 2-5 are now permanently inaccessible — blocked by Z/J/T on rows 15-17. Building clean rows above instead."
+    },
+    {
+      "move_index": 35,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 36,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 37,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 38,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              8,
+              13
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 366,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      },
+      "reasoning": "J right cols 6-8."
+    },
+    {
+      "move_index": 39,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 40,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 41,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 42,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              10
+            ],
+            [
+              0,
+              11
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              2,
+              11
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 386,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      },
+      "reasoning": "T left wall."
+    },
+    {
+      "move_index": 43,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 44,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 45,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              10
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              6,
+              11
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 406,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      },
+      "reasoning": "S right-center."
+    },
+    {
+      "move_index": 46,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 47,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              9
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 424,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      },
+      "reasoning": "S left-center."
+    },
+    {
+      "move_index": 48,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 49,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 50,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 51,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              8
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 440,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      },
+      "reasoning": "T right."
+    },
+    {
+      "move_index": 52,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 53,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 54,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 454,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      },
+      "reasoning": "Z left."
+    },
+    {
+      "move_index": 55,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 56,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 57,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 58,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              7
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 466,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      },
+      "reasoning": "O right."
+    },
+    {
+      "move_index": 59,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 474,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      },
+      "reasoning": "I center."
+    },
+    {
+      "move_index": 60,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 61,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 62,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 63,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 484,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      },
+      "reasoning": "J left wall."
+    },
+    {
+      "move_index": 64,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 65,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 66,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              7,
+              4
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 490,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      },
+      "reasoning": "L right."
+    },
+    {
+      "move_index": 67,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 494,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      },
+      "reasoning": "Z center."
+    },
+    {
+      "move_index": 68,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 69,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 70,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 71,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 496,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      },
+      "reasoning": "O right."
+    },
+    {
+      "move_index": 72,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 73,
+      "action": "HardDrop",
+      "effect": {
+        "GameOver": {
+          "locked_cells": [
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "locked_type": "L",
+          "final_score": 496
+        }
+      },
+      "reasoning": "L left-center."
+    }
+  ]
+}

@@ -1,0 +1,4089 @@
+{
+  "metadata": {
+    "game_id": "42201e56-0f01-43ce-b927-d23dfeec1afc",
+    "seed": 308284348842524066,
+    "board_width": 10,
+    "board_height": 20,
+    "final_score": 1718,
+    "lines_cleared": 6,
+    "pieces_placed": 51,
+    "total_moves": 190,
+    "game_over": true
+  },
+  "initial_state": {
+    "board": {
+      "grid": {
+        "width": 10,
+        "height": 20,
+        "cells": []
+      }
+    },
+    "current_piece": {
+      "piece_type": "Z",
+      "rotation": "North",
+      "x": 3,
+      "y": 0
+    },
+    "next_piece": "I",
+    "score": 0,
+    "lines_cleared": 0,
+    "level": 1,
+    "pieces_placed": 0,
+    "game_over": false,
+    "game_over_reason": null
+  },
+  "moves": [
+    {
+      "move_index": 0,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 1,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 2,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 3,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              18
+            ],
+            [
+              1,
+              18
+            ],
+            [
+              1,
+              19
+            ],
+            [
+              2,
+              19
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 36,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 4,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              19
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              5,
+              19
+            ],
+            [
+              6,
+              19
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 72,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 5,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 6,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              17
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              3,
+              18
+            ],
+            [
+              4,
+              18
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 106,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 7,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 8,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 9,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 10,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 11,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              18
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              7,
+              19
+            ],
+            [
+              8,
+              19
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 142,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 12,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 13,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 14,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 176,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 15,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              4,
+              16
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              5,
+              17
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 208,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 16,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 17,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 18,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 19,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 20,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": -1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 21,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              15
+            ],
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              17
+            ],
+            [
+              1,
+              17
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 238,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 22,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 23,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 24,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 25,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 26,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              9,
+              17
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 1,
+          "score": 370,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 27,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 28,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 29,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 30,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 31,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 32,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              9,
+              16
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              9,
+              19
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 1,
+          "score": 502,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 33,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 34,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 35,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              17
+            ],
+            [
+              1,
+              18
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              3,
+              18
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 536,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 36,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 37,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "East",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 38,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              5,
+              16
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 1,
+          "score": 668,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 39,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 40,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              17
+            ],
+            [
+              2,
+              18
+            ],
+            [
+              3,
+              18
+            ],
+            [
+              4,
+              18
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 702,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 41,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 42,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 43,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 44,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              7,
+              18
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 736,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 45,
+      "action": {
+        "Rotate": "Ccw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "West",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 46,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 47,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 48,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 49,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 50,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              0,
+              17
+            ],
+            [
+              1,
+              17
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 768,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 51,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 52,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 53,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 54,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 55,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              9,
+              17
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 800,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 56,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              4,
+              15
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              16
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 830,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 57,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 58,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 59,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 60,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              14
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              7,
+              15
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 858,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 61,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 62,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 63,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 64,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              14
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              2,
+              15
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 886,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 65,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 66,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              14
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 912,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 67,
+      "action": {
+        "Rotate": "Ccw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 68,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 69,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 70,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 71,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 72,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 8,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 73,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              9,
+              16
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 940,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 74,
+      "action": {
+        "Rotate": "Ccw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "West",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 75,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 76,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 77,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 78,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              3,
+              13
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 964,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 79,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 80,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 988,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 81,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 82,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 83,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 84,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 85,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": -1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 86,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": -2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 87,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              11
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              13
+            ],
+            [
+              0,
+              14
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 1,
+          "score": 1110,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 88,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 89,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 90,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 91,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 92,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              8,
+              14
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 1136,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 93,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 94,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "South",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 95,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "South",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 96,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "South",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 97,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              7,
+              13
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 1158,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 98,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 99,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              3,
+              13
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 1182,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 100,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 101,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 102,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 103,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 104,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              9,
+              12
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 1204,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 105,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 106,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 107,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 108,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 109,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 1224,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 110,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 111,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "East",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 112,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 1,
+          "score": 1344,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 113,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 114,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "East",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 115,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              5,
+              11
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              5,
+              13
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 1366,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 116,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 117,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 118,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 119,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              10
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 1386,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 120,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 121,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 122,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 123,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 124,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 125,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              9,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              12
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 1404,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 126,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 127,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              4,
+              9
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 1422,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 128,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 129,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 130,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 131,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              9
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              0,
+              10
+            ],
+            [
+              1,
+              10
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 1440,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 132,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 133,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 134,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 1456,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 135,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 136,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 137,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              8
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              3,
+              9
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 1472,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 138,
+      "action": {
+        "Rotate": "Ccw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 139,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 140,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 141,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 142,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "West",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 143,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 1,
+          "score": 1588,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 144,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 145,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 146,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 147,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 1602,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 148,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 149,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 150,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 151,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 1616,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 152,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              8
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              4,
+              9
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 1632,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 153,
+      "action": {
+        "Rotate": "Cw"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 3,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 154,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 155,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 156,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 157,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "East",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 158,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              9,
+              6
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              9,
+              8
+            ],
+            [
+              9,
+              9
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 1644,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "J"
+        }
+      }
+    },
+    {
+      "move_index": 159,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 1656,
+          "new_piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 160,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 161,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 162,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "J",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 163,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "locked_type": "J",
+          "lines_cleared": 0,
+          "score": 1666,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "S"
+        }
+      }
+    },
+    {
+      "move_index": 164,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 165,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 166,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 167,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              8,
+              7
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 1678,
+          "new_piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 168,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 169,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "S",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 170,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "locked_type": "S",
+          "lines_cleared": 0,
+          "score": 1686,
+          "new_piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "O"
+        }
+      }
+    },
+    {
+      "move_index": 171,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 172,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "T",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 173,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              7,
+              5
+            ]
+          ],
+          "locked_type": "T",
+          "lines_cleared": 0,
+          "score": 1694,
+          "new_piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 174,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 175,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 176,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 177,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 7,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 178,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "O",
+            "rotation": "North",
+            "x": 8,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 179,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              8,
+              4
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              9,
+              5
+            ]
+          ],
+          "locked_type": "O",
+          "lines_cleared": 0,
+          "score": 1702,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "I"
+        }
+      }
+    },
+    {
+      "move_index": 180,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 2,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 181,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 1,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 182,
+      "action": {
+        "Move": "Left"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 183,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "locked_type": "L",
+          "lines_cleared": 0,
+          "score": 1706,
+          "new_piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "Z"
+        }
+      }
+    },
+    {
+      "move_index": 184,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 4,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 185,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 5,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 186,
+      "action": {
+        "Move": "Right"
+      },
+      "effect": {
+        "PieceMoved": {
+          "piece": {
+            "piece_type": "I",
+            "rotation": "North",
+            "x": 6,
+            "y": 0
+          }
+        }
+      }
+    },
+    {
+      "move_index": 187,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "locked_type": "I",
+          "lines_cleared": 0,
+          "score": 1710,
+          "new_piece": {
+            "piece_type": "Z",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "L"
+        }
+      }
+    },
+    {
+      "move_index": 188,
+      "action": "HardDrop",
+      "effect": {
+        "PieceLocked": {
+          "locked_cells": [
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "locked_type": "Z",
+          "lines_cleared": 0,
+          "score": 1716,
+          "new_piece": {
+            "piece_type": "L",
+            "rotation": "North",
+            "x": 3,
+            "y": 0
+          },
+          "next_piece": "T"
+        }
+      }
+    },
+    {
+      "move_index": 189,
+      "action": "HardDrop",
+      "effect": {
+        "GameOver": {
+          "locked_cells": [
+            [
+              5,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "locked_type": "L",
+          "final_score": 1718
+        }
+      }
+    }
+  ]
+}
